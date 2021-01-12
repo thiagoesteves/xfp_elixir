@@ -1,4 +1,7 @@
 ![github workflow](https://github.com/thiagoesteves/xfp_elixir/workflows/Elixir%20CI/badge.svg)
+[![Build Status](https://secure.travis-ci.org/thiagoesteves/xfp_elixir.svg?branch=main)](http://travis-ci.org/thiagoesteves/xfp_elixir)
+[![Coverage Status](https://coveralls.io/repos/github/thiagoesteves/xfp_elixir/badge.svg?branch=main)](https://coveralls.io/github/thiagoesteves/xfp_elixir?branch=main)
+[![Erlant/OTP Release](https://img.shields.io/badge/Erlang-OTP--23.0-green.svg)](https://github.com/erlang/otp/releases/tag/OTP-23.0)
 
 # The XFP application #
 

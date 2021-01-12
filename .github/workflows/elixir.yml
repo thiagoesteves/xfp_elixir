@@ -11,7 +11,8 @@ jobs:
 
     name: Build and test
     runs-on: ubuntu-latest
-
+    env:
+      MIX_ENV: test
     steps:
     - uses: actions/checkout@v2
     - name: Set up Elixir
@@ -26,6 +27,8 @@ jobs:
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
-      run: mix deps.get
+      run: |
+        mix deps.get
+        mix compile
     - name: Run tests
       run: mix test

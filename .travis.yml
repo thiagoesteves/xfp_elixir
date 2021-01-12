@@ -1,0 +1,10 @@
+language: elixir
+elixir:
+  - 1.11.2
+otp_release:
+  - 23.0
+env:
+  - MIX_ENV=test
+script:
+  - mix do deps.get, test && mix compile --warnings-as-errors && mix coveralls.travis
+
