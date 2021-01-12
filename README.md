@@ -109,6 +109,9 @@ iex(7)> :observer.start()
 :ok
 ```
 
+This image shows how the supervision tree is composed once the XFP is instantiated:
+![Supervision Tree](/doc/supervision_tree.png)
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
