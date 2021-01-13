@@ -13,6 +13,7 @@ defmodule XfpApp.MixProject do
       source_url: @source_url,
       start_permanent: Mix.env() == :prod,
       compilers: [:elixir_make | Mix.compilers],
+      aliases: aliases(),
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
@@ -21,6 +22,13 @@ defmodule XfpApp.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test
       ]
+    ]
+  end
+
+  # Do not start application during the tests
+  defp aliases do
+    [
+      test: "test --no-start"
     ]
   end
 

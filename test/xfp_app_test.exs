@@ -2,6 +2,14 @@ defmodule XfpAppTest do
   use ExUnit.Case
   doctest Xfp.Application
 
+  @app_name :xfp_app
+
+  setup do
+    Application.stop(@app_name)
+    :ok = Application.start(@app_name)
+    :ok
+  end
+
   test "check Application is running" do
     assert nil != Process.whereis(Xfp.Supervisor)
   end
