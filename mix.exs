@@ -35,9 +35,8 @@ defmodule XfpApp.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      mod: {Xfp.Application, []},
-      applications: [:gproc]
+      extra_applications: [:logger, :gproc],
+      mod: {Xfp.Application, []}
     ]
   end
 
@@ -52,6 +51,7 @@ defmodule XfpApp.MixProject do
       {:elixir_make, "~> 0.4",  runtime: false},
       {:dialyxir,    "~> 1.0",  only: [:dev], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
+      {:meck,        "~> 0.9.0", only: :test}
     ]
   end
 end

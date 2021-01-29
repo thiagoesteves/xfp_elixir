@@ -22,3 +22,6 @@ xfp_app-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+#ignore so files
+/priv/c/*

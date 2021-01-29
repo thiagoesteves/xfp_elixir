@@ -2,7 +2,7 @@ Code.require_file("test_util.exs", __DIR__)
 
 defmodule XfpCreateRemoveTest do
   use ExUnit.Case
-  doctest Xfp.Sup
+  doctest Xfp.Application
 
   @app_name :xfp_app
 
