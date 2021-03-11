@@ -6,7 +6,8 @@ defmodule XfpCreateRemoveTest do
 
   @app_name :xfp_app
 
-  @check_state_timeout  10 # in ms
+  # in ms
+  @check_state_timeout 10
 
   setup do
     Application.stop(@app_name)
@@ -15,19 +16,19 @@ defmodule XfpCreateRemoveTest do
   end
 
   test "Create Xfp" do
-    assert {:ok, _} = Xfp.Sup.create_xfp
+    assert {:ok, _} = Xfp.Sup.create_xfp()
   end
 
   test "Create Xfp and Remove XFP" do
-    assert {:ok, _} = Xfp.Sup.create_xfp
-    assert nil      != Process.whereis(:"Xfp:0")
+    assert {:ok, _} = Xfp.Sup.create_xfp()
+    assert nil != Process.whereis(:"Xfp:0")
 
-    assert :ok      = Xfp.Sup.remove_xfp
-    assert nil      == Process.whereis(:"Xfp:0")
+    assert :ok = Xfp.Sup.remove_xfp()
+    assert nil == Process.whereis(:"Xfp:0")
   end
 
   test "Create Xfp, kill the server and check the supervisor restarts it" do
-    assert {:ok, _} = Xfp.Sup.create_xfp 2
+    assert {:ok, _} = Xfp.Sup.create_xfp(2)
     pid = Process.whereis(:"Xfp:2")
     Process.exit(pid, :kill)
     # sleep to allow the system to crash
@@ -37,8 +38,8 @@ defmodule XfpCreateRemoveTest do
   end
 
   test "Wait XFP to be inserted" do
-    assert {:ok, _} = Xfp.Sup.create_xfp 2
-    assert :ok      = TestUtil.wait_xfp_to_be_inserted(2, @check_state_timeout)
-    assert :ok      = Xfp.Sup.remove_xfp 2
+    assert {:ok, _} = Xfp.Sup.create_xfp(2)
+    assert :ok = TestUtil.wait_xfp_to_be_inserted(2, @check_state_timeout)
+    assert :ok = Xfp.Sup.remove_xfp(2)
   end
 end

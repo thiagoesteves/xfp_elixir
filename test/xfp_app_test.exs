@@ -6,7 +6,7 @@ defmodule XfpAppTest do
 
   setup do
     Application.start(@app_name)
-    on_exit fn -> Application.stop(@app_name) end
+    on_exit(fn -> Application.stop(@app_name) end)
     :ok
   end
 

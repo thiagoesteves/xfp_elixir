@@ -12,7 +12,7 @@ defmodule XfpApp.MixProject do
       description: description(),
       source_url: @source_url,
       start_permanent: Mix.env() == :prod,
-      compilers: [:elixir_make | Mix.compilers],
+      compilers: [:elixir_make | Mix.compilers()],
       aliases: aliases(),
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
@@ -47,11 +47,11 @@ defmodule XfpApp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gproc, git:  "git://github.com/uwiger/gproc"},
-      {:elixir_make, "~> 0.4",  runtime: false},
-      {:dialyxir,    "~> 1.0",  only: [:dev], runtime: false},
+      {:gproc, git: "git://github.com/uwiger/gproc"},
+      {:elixir_make, "~> 0.4", runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
-      {:meck,        "~> 0.9.0", only: :test}
+      {:meck, "~> 0.9.0", only: :test}
     ]
   end
 end

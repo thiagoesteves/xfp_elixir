@@ -1,8 +1,8 @@
 defmodule Xfp.Supervisor do
   @moduledoc """
-    This supervisor will handle the gen_server and/or other supervisor
-    for this application
-    """
+  This supervisor will handle the gen_server and/or other supervisor
+  for this application
+  """
   use Supervisor
 
   def start_link() do
@@ -15,7 +15,7 @@ defmodule Xfp.Supervisor do
       Xfp.Sup,
       Xfp.Driver
     ]
+
     Supervisor.init(children, strategy: :one_for_one)
   end
-
 end
