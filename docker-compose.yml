@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  application:
+    build: .
+    container_name: XfpElixir
+    volumes:
+      - .:/home/app
+    command: /bin/bash
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t

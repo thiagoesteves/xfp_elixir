@@ -47,7 +47,7 @@ defmodule XfpApp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gproc, git: "git://github.com/uwiger/gproc"},
+      {:gproc, git: "https://github.com/uwiger/gproc"},
       {:elixir_make, "~> 0.4", runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},

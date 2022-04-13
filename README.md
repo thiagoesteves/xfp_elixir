@@ -17,6 +17,14 @@ The XFP is a transceiver for high-speed computer network and telecommunication l
 
 The driver is using the polling format to read the presence pin every 1 second which means that it will take up to 1 second to detect any changes. Once the device is inserted, all the static information is read and saved in its state.
 
+## Deploy using Docker
+
+The current local deploy using docker:
+
+  * Create the docker container `docker-compose up`
+  * Destroy the docker container `docker-compose down`
+  * Access the container `docker exec -it XfpElixir /bin/bash`
+
 ### Compiling and Running ###
 
 To compile and run for your machine just call the following command in the CLI:
